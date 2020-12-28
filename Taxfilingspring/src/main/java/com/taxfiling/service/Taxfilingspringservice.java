@@ -6,14 +6,14 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
-import com.taxfiling.dto.Taxfilingspringdtointerface;
+import com.taxfiling.dao.Taxfilingspringdaointerafce;
 import com.taxfiling.entity.Customer;
 import com.taxfiling.entity.Notice;
 
 @Configuration
 public class Taxfilingspringservice implements Taxfilingspringserviceinterface{
 @Autowired
-Taxfilingspringdtointerface td;
+Taxfilingspringdaointerafce td;
 
 @Override
 public List<Notice> viewCustomerNotice(Long id) {

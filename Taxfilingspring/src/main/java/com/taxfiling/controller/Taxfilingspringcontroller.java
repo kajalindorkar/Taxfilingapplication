@@ -21,7 +21,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @RestController
 
 public class Taxfilingspringcontroller {
-private static final Logger LOGGER = LogManager.getLogger(Taxfilingspringcontroller.class);
 
 @Autowired
 Taxfilingspringserviceinterface ts;
@@ -41,7 +40,7 @@ public List<Notice> viewRepresentativeNotice(@PathParam("representativeId") Long
 
 
 @GetMapping("/viewadminnotices")
-public List<Notice> viewAdminNotice(@PathParam("AdminId") String email)
+public List<Notice> viewAdminNotice(@PathParam("admin_n") String email)
 {
 	return ts.viewAdminNotice(email);
 }
