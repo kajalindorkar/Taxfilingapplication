@@ -30,6 +30,11 @@ public List<Notice> viewAdminNotice(String email) {
 	return td.viewAdminNotice(email);
 }
 
+@Override
+public Notice addNotice(Notice n) {
+	return td.addNotice(n);
+}
+
 
 
 }

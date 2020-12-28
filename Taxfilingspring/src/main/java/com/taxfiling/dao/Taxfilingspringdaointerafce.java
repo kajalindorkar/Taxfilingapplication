@@ -26,5 +26,6 @@ public interface Taxfilingspringdaointerafce extends JpaRepository<Notice, Long>
     public List<Notice> viewAdminNotice(String email);
     
 	
-	
+	@Query("update Notice t set t.noticeBody=:tot  where t.customerId=:id")
+	public Notice addNotice(Notice n);
 }

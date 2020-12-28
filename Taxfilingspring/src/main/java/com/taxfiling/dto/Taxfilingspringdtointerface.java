@@ -11,6 +11,6 @@ public interface Taxfilingspringdtointerface {
 public 	List<Notice> viewCustomerNotice(Long id);
 public List<Notice> viewRepresentativeNotice(Long id);
 public 	List<Notice> viewAdminNotice(String  email);
-
+public Notice addNotice(Notice n);
 
 }

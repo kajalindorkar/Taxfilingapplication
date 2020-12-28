@@ -32,4 +32,9 @@ public List<Notice> viewAdminNotice(String  email) {
 	return tf.viewAdminNotice(email);
 	}
 
+@Override
+public Notice addNotice(Notice n) {
+	return tf.addNotice(n);
+}
+
 }

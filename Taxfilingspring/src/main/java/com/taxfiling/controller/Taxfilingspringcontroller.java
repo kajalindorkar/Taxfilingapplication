@@ -9,6 +9,8 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.taxfiling.entity.Notice;
@@ -24,23 +26,29 @@ private static final Logger LOGGER = LogManager.getLogger(Taxfilingspringcontrol
 @Autowired
 Taxfilingspringserviceinterface ts;
 
-@GetMapping("viewcustomernotices")
+@GetMapping("/viewcustomernotices")
 public List<Notice> viewCustomerNotice(@PathParam("CustomerId") Long id)
 {
 	return ts.viewCustomerNotice(id);
 }
 
 
-@GetMapping("viewrepresentativenotices")
+@GetMapping("/viewrepresentativenotices")
 public List<Notice> viewRepresentativeNotice(@PathParam("representativeId") Long id)
 {
 	return ts.viewCustomerNotice(id);
 }
 
 
-@GetMapping("viewadminnotices")
+@GetMapping("/viewadminnotices")
 public List<Notice> viewAdminNotice(@PathParam("AdminId") String email)
 {
 	return ts.viewAdminNotice(email);
+}
+@PostMapping("/addnotices")
+public Notice addNotice(@RequestBody Notice n)
+{
+	return ts.addNotice(n);
+	
 }
 }

@@ -13,5 +13,5 @@ public interface Taxfilingspringserviceinterface {
 
 	public List<Notice> viewAdminNotice(String  email);
 
-
+public Notice addNotice(Notice n);
 }
