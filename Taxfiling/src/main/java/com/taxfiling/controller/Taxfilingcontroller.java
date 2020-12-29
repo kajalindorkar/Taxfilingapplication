@@ -1,5 +1,6 @@
 package com.taxfiling.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.websocket.server.PathParam;
@@ -22,14 +23,32 @@ Taxfilingserviceinterface ts;
 @GetMapping("/viewadminnotice")
 public List<Notice> viewadminnotice(@PathParam("email_n") String email_n)
 {
-	return ts.viewadminnotice(email_n);
+	List<Notice> ll=ts.viewadminnotice(email_n);
+	List<Notice> ll1=new ArrayList<Notice>();
+	for(Notice n:ll)
+	{
+		Notice n1=new Notice();
+	   n1.setNoticeBody(n.getNoticeBody());
+	   n1.setNoticeId(n.getNoticeId());
+	   ll1.add(n1);
+	 }
+return ll1;
 }
 
 
 @GetMapping("/viewcustomernotice")
 public List<Notice> viewCustomerNotice(@PathParam("customer_id") Long id)
 {
-	return ts.viewCustomerNotice(id);
+	List<Notice> ll=ts.viewCustomerNotice(id);
+	List<Notice> ll1=new ArrayList<Notice>();
+	for(Notice n:ll)
+	{
+		Notice n1=new Notice();
+	   n1.setNoticeBody(n.getNoticeBody());
+	   n1.setNoticeId(n.getNoticeId());
+	   ll1.add(n1);
+	 }
+return ll1;
 }
 
 
@@ -37,7 +56,16 @@ public List<Notice> viewCustomerNotice(@PathParam("customer_id") Long id)
 @GetMapping("/viewRepresentativeNotice")
 public List<Notice> viewRepresentativeNotice(@PathParam("representative_id") Long id)
 {
-	return ts.viewRepresentativeNotice(id);
+	List<Notice> ll=ts.viewRepresentativeNotice(id);
+	List<Notice> ll1=new ArrayList<Notice>();
+	for(Notice n:ll)
+	{
+		Notice n1=new Notice();
+	   n1.setNoticeBody(n.getNoticeBody());
+	   n1.setNoticeId(n.getNoticeId());
+	   ll1.add(n1);
+	 }
+return ll1;
 }
 
 
