@@ -2,6 +2,8 @@ package com.taxfiling.controller;
 
 import java.util.List;
 
+import javax.websocket.server.PathParam;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,14 +20,14 @@ public class Taxfilingcontroller  {
 Taxfilingserviceinterface ts;
 
 @GetMapping("/viewadminnotice")
-public List<Notice> viewadminnotice(String email)
+public List<Notice> viewadminnotice(@PathParam("email_n") String email_n)
 {
-	return ts.viewnoticeadmin(email);
+	return ts.viewadminnotice(email_n);
 }
 
 
 @GetMapping("/viewcustomernotice")
-public List<Notice> viewCustomerNotice(Long id)
+public List<Notice> viewCustomerNotice(@PathParam("customer_id") Long id)
 {
 	return ts.viewCustomerNotice(id);
 }
@@ -33,7 +35,7 @@ public List<Notice> viewCustomerNotice(Long id)
 
 
 @GetMapping("/viewRepresentativeNotice")
-public List<Notice> viewRepresentativeNotice(Long id)
+public List<Notice> viewRepresentativeNotice(@PathParam("representative_id") Long id)
 {
 	return ts.viewRepresentativeNotice(id);
 }

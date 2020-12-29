@@ -14,9 +14,9 @@ public class Taxfilingservice implements Taxfilingserviceinterface {
 Taxfilingdaointerface td;
 
 @Override
-public List<Notice> viewnoticeadmin(String email) {
+public List<Notice> viewadminnotice(String email) {
 	
-	return td.viewnoticeadmin(email);
+	return td.viewadminnotice(email);
 }
 
 @Override

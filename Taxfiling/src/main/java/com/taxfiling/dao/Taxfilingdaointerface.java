@@ -12,8 +12,8 @@ import com.taxfiling.entity.Notice;
 public interface Taxfilingdaointerface extends JpaRepository<Notice, Long>{
 	
 	//public List<Notice> viewnoticeadmin(Notice n);
-	@Query("select n from Notice n where n.admin_n=:email")
-    public List<Notice> viewnoticeadmin(String email);
+	@Query("select n from Notice n where n.admin_n.email=:email")
+    public List<Notice> viewadminnotice(String email);
 	
 
 	@Query("select t from Notice t INNER JOIN t.customer c where c.customerId=:id")
